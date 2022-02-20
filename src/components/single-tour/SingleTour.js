@@ -1,3 +1,5 @@
+import './single-tour.css';
+
 export const SingleTour = () => {
   return (
     <div className="single-tour">
