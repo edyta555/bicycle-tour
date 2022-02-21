@@ -1,9 +1,10 @@
+import TourDate from "./tour-date/TourDate";
 import "./single-tour.css";
 
-export const SingleTour = (props) => {
+const SingleTour = (props) => {
   return (
     <div className="single-tour">
-      <div className="single-tour-date">{props.date.toISOString()}</div>
+      <TourDate tourDate={props.date} />
       <div className="single-tour-description">
         <div className="single-tour-route">
           <h2>{props.startPoint}</h2>

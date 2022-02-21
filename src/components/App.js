@@ -1,7 +1,7 @@
-import { SingleTour } from "./single-tour/SingleTour";
+import SingleTour from "./single-tour/SingleTour";
 import { toursData } from "./payload";
 
-export const App = () => {
+const App = () => {
   return (
     <div>
       <SingleTour

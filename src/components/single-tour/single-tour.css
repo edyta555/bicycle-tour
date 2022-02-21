@@ -9,10 +9,6 @@
   background-color: #fafaff;
 }
 
-.single-tour-date {
-  min-width: 10%;
-}
-
 .single-tour-description {
   display: flex;
   justify-content: space-between;
