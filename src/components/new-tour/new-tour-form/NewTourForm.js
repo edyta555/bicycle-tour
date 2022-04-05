@@ -1,13 +1,15 @@
 import { useState } from "react";
 import "./new-tour-form.css";
 
-const NewTourForm = () => {
-  const [enteredData, setEnteredData] = useState({
+const NewTourForm = ({ onSaveTourData }) => {
+  const initialInputData = {
     startPoint: "",
     stopPoint: "",
     distance: "",
     date: "",
-  });
+  };
+
+  const [enteredData, setEnteredData] = useState({ ...initialInputData });
 
   const enteredDataChangeHandler = (event) => {
     const newValue = event.target.value;
@@ -16,14 +18,28 @@ const NewTourForm = () => {
     });
   };
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const saveData = {
+      startPoint: enteredData.startPoint,
+      stopPoint: enteredData.stopPoint,
+      tourDistance: parseInt(enteredData.distance),
+      tourDate: new Date(enteredData.date),
+      id: Math.random().toString(),
+    };
+    setEnteredData({ ...initialInputData });
+    onSaveTourData(saveData);
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="form-fields">
         <div className="form-field">
           <label>
             Start point:
             <input
               type="text"
+              minLength="1"
               name="startPoint"
               value={enteredData.startPoint}
               onChange={enteredDataChangeHandler}
@@ -70,7 +86,7 @@ const NewTourForm = () => {
         </div>
       </div>
       <div className="form-button">
-        <button tyle="submit">Add tour</button>
+        <button type="submit">Add tour</button>
       </div>
     </form>
   );

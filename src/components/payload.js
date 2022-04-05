@@ -1,4 +1,4 @@
-export const toursData = [
+export const initialToursData = [
   {
     id: 1,
     tourDate: new Date(2021, 5, 12),

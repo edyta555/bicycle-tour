@@ -1,11 +1,20 @@
+import { useState } from "react";
 import SingleTour from "./single-tour/SingleTour";
-import { toursData } from "./payload";
+import { initialToursData } from "./payload";
 import NewTour from "./new-tour/NewTour";
 
 const App = () => {
+  const [toursData, setToursData] = useState(initialToursData);
+
+  const saveTourData = (newTourData) => {
+    setToursData((prevToursData) => {
+      return [...prevToursData, newTourData];
+    });
+  };
+
   return (
     <div>
-      <NewTour />
+      <NewTour onSaveTourData={saveTourData} />
       {toursData.map((tourData) => (
         <SingleTour
           key={tourData.id}

@@ -2,10 +2,11 @@ import "./new-tour.css";
 
 import NewTourForm from "./new-tour-form/NewTourForm";
 
-const NewTour = () => {
+const NewTour = ({onSaveTourData}) => {
+
   return (
     <div className="new-tour">
-      <NewTourForm />
+      <NewTourForm onSaveTourData={onSaveTourData} />
     </div>
   );
 };
