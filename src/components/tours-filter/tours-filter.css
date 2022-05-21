@@ -2,7 +2,6 @@
   border-radius: 10px;
   background-color: #fafaff;
   display: inline-block;
-  min-width: fit-content;
   padding: 0.5rem 1rem;
   background: #806df6;
 }
@@ -14,15 +13,14 @@
 }
 
 .filter-name {
-  display: inline;
   margin-right: 10px;
+  font-size: 18px;
 }
 
 .select-year {
   color: white;
   background: #806df6;
-}
-select {
+  cursor: pointer;
   width: 100px;
   height: 50px;
   line-height: 50px;
@@ -30,7 +28,4 @@ select {
   -webkit-appearance: menulist-button;
   -moz-appearance: none;
   outline: 0px;
-}
-option {
-  height: 50px;
 }

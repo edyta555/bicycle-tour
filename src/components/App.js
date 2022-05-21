@@ -6,6 +6,7 @@ import ToursFilter from "./tours-filter/ToursFilter";
 
 const App = () => {
   const [toursData, setToursData] = useState(initialToursData);
+  const [selectedYear, setYear] = useState("2022");
 
   const saveTourData = (newTourData) => {
     setToursData((prevToursData) => {
@@ -13,11 +14,22 @@ const App = () => {
     });
   };
 
+  const filterToursByYear = (year) => {
+    setYear(year);
+  };
+
+  const toursToShow = toursData.filter((tour) => {
+    return tour.tourDate.getFullYear().toString() === selectedYear;
+  });
+
   return (
     <div>
       <NewTour onSaveTourData={saveTourData} />
-      <ToursFilter />
-      {toursData.map((tourData) => (
+      <ToursFilter
+        selectedYear={selectedYear}
+        onChangeYear={filterToursByYear}
+      />
+      {toursToShow.map((tourData) => (
         <SingleTour
           key={tourData.id}
           date={tourData.tourDate}
