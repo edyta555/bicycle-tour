@@ -2,6 +2,7 @@ import { useState } from "react";
 import SingleTour from "./single-tour/SingleTour";
 import { initialToursData } from "./payload";
 import NewTour from "./new-tour/NewTour";
+import ToursFilter from "./tours-filter/ToursFilter";
 
 const App = () => {
   const [toursData, setToursData] = useState(initialToursData);
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <div>
       <NewTour onSaveTourData={saveTourData} />
+      <ToursFilter />
       {toursData.map((tourData) => (
         <SingleTour
           key={tourData.id}
