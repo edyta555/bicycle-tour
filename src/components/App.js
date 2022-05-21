@@ -3,6 +3,7 @@ import SingleTour from "./single-tour/SingleTour";
 import { initialToursData } from "./payload";
 import NewTour from "./new-tour/NewTour";
 import ToursFilter from "./tours-filter/ToursFilter";
+import NoTour from "./no-tour/NoTour";
 
 const App = () => {
   const [toursData, setToursData] = useState(initialToursData);
@@ -29,15 +30,19 @@ const App = () => {
         selectedYear={selectedYear}
         onChangeYear={filterToursByYear}
       />
-      {toursToShow.map((tourData) => (
-        <SingleTour
-          key={tourData.id}
-          date={tourData.tourDate}
-          startPoint={tourData.startPoint}
-          endPoint={tourData.endPoint}
-          distance={tourData.tourDistance}
-        />
-      ))}
+      {toursToShow.length === 0 ? (
+        <NoTour />
+      ) : (
+        toursToShow.map((tourData) => (
+          <SingleTour
+            key={tourData.id}
+            date={tourData.tourDate}
+            startPoint={tourData.startPoint}
+            endPoint={tourData.endPoint}
+            distance={tourData.tourDistance}
+          />
+        ))
+      )}
     </div>
   );
 };
