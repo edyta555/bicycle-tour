@@ -7,20 +7,33 @@
   border-radius: 10px;
   border: 2px solid #806df6;
   background-color: #fafaff;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
 
   .single-tour-description {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
 
     .single-tour-route {
       display: flex;
       flex-direction: column;
+      @media (max-width: 600px) {
+        margin: 1rem auto;
+      }
 
       h2 {
         font-size: 1rem;
         margin: 0 3rem;
         color: #806df6;
+        @media (max-width: 600px) {
+          margin: 0 auto;
+        }
       }
     }
 
@@ -32,6 +45,9 @@
       border: 1px solid white;
       padding: 0.5rem 3rem;
       border-radius: 10px;
+      @media (max-width: 600px) {
+        margin: 0 auto;
+      }
     }
   }
 }
