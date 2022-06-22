@@ -2,6 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 
   .form-field {
     label {
@@ -19,6 +22,9 @@
       border: 1px solid #808080;
       min-height: 1.2rem;
       margin-left: 0.2rem;
+      @media (max-width: 600px) {
+        width: 90%;
+      }
     }
   }
 }
@@ -33,5 +39,8 @@
     padding: 0.7rem 3rem;
     border: 1px solid white;
     border-radius: 8px;
+    @media (max-width: 600px) {
+      width: 100%;
+    }
   }
 }
