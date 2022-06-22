@@ -1,19 +1,27 @@
 import "./tours-filter.css";
 
-const ToursFilter = ({selectedYear, onChangeYear}) => {
-  
+const ToursFilter = ({ selectedYear, onChangeYear }) => {
   const changeActiveYear = (event) => {
     onChangeYear(event.target.value);
   };
+
+  const reverseArrayInRange = (start, end) =>
+    Array(end - start + 1)
+      .fill()
+      .map((_, idx) => end - idx);
 
   return (
     <div className="filter-row">
       <div className="filter-container">
         <label className="filter-name">Filter tours by years:</label>
-        <select value={selectedYear} className="select-year" onChange={changeActiveYear}>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
-          <option value="2020">2020</option>
+        <select
+          value={selectedYear}
+          className="select-year"
+          onChange={changeActiveYear}
+        >
+          {reverseArrayInRange(2018, 2022).map((year) => (
+            <option key={year} value={year}>{year}</option>
+          ))}
         </select>
       </div>
     </div>

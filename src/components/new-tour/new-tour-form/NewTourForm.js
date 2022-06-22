@@ -22,7 +22,7 @@ const NewTourForm = ({ onSaveTourData }) => {
     event.preventDefault();
     const saveData = {
       startPoint: enteredData.startPoint,
-      stopPoint: enteredData.stopPoint,
+      endPoint: enteredData.stopPoint,
       tourDistance: parseInt(enteredData.distance),
       tourDate: new Date(enteredData.date),
       id: Math.random().toString(),

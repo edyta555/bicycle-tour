@@ -1,4 +1,4 @@
-.no-tour-container {
+.no-tours-container {
   box-shadow: 0 2px 8px #806df6;
   padding: 1rem 2rem;
   margin: 1rem 2rem;
@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-.no-tour-info {
+.no-tours-info {
   font-size: 24px;
   color: red;
   font-weight: bold;

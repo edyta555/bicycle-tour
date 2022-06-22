@@ -3,11 +3,11 @@ import SingleTour from "./single-tour/SingleTour";
 import { initialToursData } from "./payload";
 import NewTour from "./new-tour/NewTour";
 import ToursFilter from "./tours-filter/ToursFilter";
-import NoTour from "./no-tour/NoTour";
+import NoTours from "./no-tours/NoTours";
 
 const App = () => {
   const [toursData, setToursData] = useState(initialToursData);
-  const [selectedYear, setYear] = useState("2022");
+  const [selectedYear, setYear] = useState("2021");
 
   const saveTourData = (newTourData) => {
     setToursData((prevToursData) => {
@@ -31,7 +31,7 @@ const App = () => {
         onChangeYear={filterToursByYear}
       />
       {toursToShow.length === 0 ? (
-        <NoTour />
+        <NoTours />
       ) : (
         toursToShow.map((tourData) => (
           <SingleTour
