@@ -1,4 +1,4 @@
-import "./tour-date.css";
+import styles from "./tour-date.module.scss";
 
 const TourDate = (props) => {
   const tourDay = props.tourDate.toLocaleString("en-US", { day: "2-digit" });
@@ -6,10 +6,10 @@ const TourDate = (props) => {
   const tourYear = props.tourDate.getFullYear();
 
   return (
-    <div className="single-tour-date">
-      <div className="tour-day">{tourDay}</div>
-      <div className="tour-month">{tourMonth}</div>
-      <div className="tour-year">{tourYear}</div>
+    <div className={styles['single-tour-date']}>
+      <div className={styles['tour-day']}>{tourDay}</div>
+      <div className={styles['tour-month']}>{tourMonth}</div>
+      <div className={styles['tour-year']}>{tourYear}</div>
     </div>
   );
 };

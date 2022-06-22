@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./new-tour-form.css";
+import styles from "./new-tour-form.module.scss";
 
 const NewTourForm = ({ onSaveTourData }) => {
   const initialInputData = {
@@ -33,8 +33,8 @@ const NewTourForm = ({ onSaveTourData }) => {
 
   return (
     <form onSubmit={submitHandler}>
-      <div className="form-fields">
-        <div className="form-field">
+      <div className={styles['form-fields']}>
+        <div className={styles['form-field']}>
           <label>
             Start point:
             <input
@@ -46,7 +46,7 @@ const NewTourForm = ({ onSaveTourData }) => {
             />
           </label>
         </div>
-        <div className="form-field">
+        <div className={styles['form-field']}>
           <label>
             End point:
             <input
@@ -58,7 +58,7 @@ const NewTourForm = ({ onSaveTourData }) => {
             />
           </label>
         </div>
-        <div className="form-field">
+        <div className={styles['form-field']}>
           <label>
             Distance:
             <input
@@ -71,7 +71,7 @@ const NewTourForm = ({ onSaveTourData }) => {
             />
           </label>
         </div>
-        <div className="form-field">
+        <div className={styles['form-field']}>
           <label>
             Date:
             <input
@@ -85,7 +85,7 @@ const NewTourForm = ({ onSaveTourData }) => {
           </label>
         </div>
       </div>
-      <div className="form-button">
+      <div className={styles['form-button']}>
         <button type="submit">Add tour</button>
       </div>
     </form>

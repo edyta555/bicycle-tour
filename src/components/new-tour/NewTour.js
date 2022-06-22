@@ -1,11 +1,11 @@
-import "./new-tour.css";
+import styles from "./new-tour.module.scss";
 
 import NewTourForm from "./new-tour-form/NewTourForm";
 
 const NewTour = ({onSaveTourData}) => {
 
   return (
-    <div className="new-tour">
+    <div className={styles['new-tour']}>
       <NewTourForm onSaveTourData={onSaveTourData} />
     </div>
   );

@@ -1,9 +1,9 @@
-import "./no-tours.css";
+import styles from "./no-tours.module.scss";
 
 const NoTours = () => {
   return (
-    <div className="no-tours-container">
-      <p className="no-tours-info">No tours.</p>
+    <div className={styles["no-tours-container"]}>
+      <p className={styles["no-tours-info"]}>No tours.</p>
     </div>
   );
 };

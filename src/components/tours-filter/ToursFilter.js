@@ -1,4 +1,4 @@
-import "./tours-filter.css";
+import styles from './tours-filter.module.scss';
 
 const ToursFilter = ({ selectedYear, onChangeYear }) => {
   const changeActiveYear = (event) => {
@@ -11,12 +11,12 @@ const ToursFilter = ({ selectedYear, onChangeYear }) => {
       .map((_, idx) => end - idx);
 
   return (
-    <div className="filter-row">
-      <div className="filter-container">
-        <label className="filter-name">Filter tours by years:</label>
+    <div className={styles['filter-row']}>
+      <div className={styles['filter-container']}>
+        <label className={styles['filter-name']}>Filter tours by years:</label>
         <select
           value={selectedYear}
-          className="select-year"
+          className={styles['select-year']}
           onChange={changeActiveYear}
         >
           {reverseArrayInRange(2018, 2022).map((year) => (
